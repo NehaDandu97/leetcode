@@ -5,3 +5,15 @@ class Solution:
             if nums[i]%2 == nums[i+1]%2:
                 return False
         return True
+
+1752. Check if Array Is Sorted and Rotated
+class Solution:
+    def check(self, nums: List[int]) -> bool:
+        c=0
+        n=len(nums)
+        for i in range(n):
+            if nums[i]>nums[(i+1)%n]:
+                c+=1
+        if c>1:
+            return False
+        return True
