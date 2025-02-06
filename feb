@@ -66,6 +66,22 @@ class Solution:
             return s1[i]==s2[j] and s1[j]==s2[i]
         return len(ind)==0
 
+1726. Tuple with Same Product
+class Solution:
+    def tupleSameProduct(self, nums: List[int]) -> int:
+        d={}
+        a=0
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                p=nums[i]*nums[j]
+
+                if p in d:
+                    a+=(d[p]*8)
+                    d[p]+=1
+                else:
+                    d[p]=1
+        return a
+        
 
 
 
