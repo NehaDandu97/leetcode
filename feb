@@ -289,6 +289,17 @@ class Solution:
                     return res 
             return ""     
         return backtrack(0, [])
+1980. Find Unique Binary String
+class Solution:
+    def findDifferentBinaryString(self, nums: List[str]) -> str:
+        r=[]
+        for i in range(0,len(nums)):
+            if nums[i][i]=='0':
+                r.append('1')
+            else:
+                r.append('0')
+        return "".join(r)
+
         
 
 
