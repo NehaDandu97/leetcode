@@ -422,7 +422,7 @@ class Solution:
             sum_is_odd^=(x&1)
             ans+=cnt[1-sum_is_odd]
             cnt[sum_is_odd]+=1
-        return ans%(10**9+7)
+        return ans%(10**9+7)  
         
         
     
