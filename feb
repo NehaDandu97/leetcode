@@ -435,6 +435,11 @@ class Solution:
             ans+=cnt[1-sum_is_odd]
             cnt[sum_is_odd]+=1
         return ans%(10**9+7)
+1749. Maximum Absolute Sum of Any Subarray
+class Solution:
+    def maxAbsoluteSum(self, nums: List[int]) -> int:
+        return max(0, max(K:=list(accumulate(nums))))-min(0, min(K))
+        
         
         
         
