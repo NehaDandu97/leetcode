@@ -518,6 +518,21 @@ class Solution:
             ans.append(l)
 
         return ans
+2161. Partition Array According to Given Pivot
+class Solution:
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        x=[]
+        y=[]
+        z=[]
+        for i in nums:
+            if i==pivot:
+                z.append(i) 
+            elif i<pivot:
+                x.append(i)
+            else :
+                y.append(i)
+        return x+z+y
+        
 
           
         
