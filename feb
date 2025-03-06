@@ -544,6 +544,22 @@ class Solution:
 class Solution:
     def coloredCells(self, n: int) -> int:
         return 2*n*(n-1)+1
+2965. Find Missing and Repeated Values
+class Solution:
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = len(grid)
+        missing = (n * n) * (1 + n * n) // 2 
+        seen = set() 
+        duplicate = -1
+        for row in grid:
+            for num in row:
+                if num not in seen:
+                    seen.add(num)
+                    missing -= num 
+                else:
+                    duplicate = num
+                    
+        return [duplicate, missing]
         
 
           
