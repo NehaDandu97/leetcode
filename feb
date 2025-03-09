@@ -602,6 +602,19 @@ class Solution:
             W+=(blocks[l+k]=='W')-(blocks[l]=='W')
             recolor=min(recolor, W)
         return recolor
+3208. Alternating Groups II
+class Solution:
+    def numberOfAlternatingGroups(self, colors: List[int], k: int) -> int:
+        n=len(colors)
+        s=n+k-1
+        ans, alt, prev=0, 1, colors[0]
+        for i in range(1, s):
+            i0=i%n
+            alt=1 if prev==colors[i0] else alt+1
+            ans+=(alt>=k)
+            prev=colors[i0]
+        return ans
+        
         
 
 
