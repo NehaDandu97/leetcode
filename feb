@@ -749,6 +749,13 @@ class Solution:
             else:
                 l=m+1
         return l
+Divide Array Into Equal Pairs
+class Solution:
+    def divideArray(self, nums: List[int]) -> bool:
+        a=0
+        for i in nums:
+            a^=(1<<i)
+        return a==0
         
         
         
