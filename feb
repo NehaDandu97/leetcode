@@ -925,6 +925,20 @@ class Solution:
                     pathCount[v] = (pathCount[v] + pathCount[u]) % MOD
 
         return pathCount[n - 1] % MOD
+3169. Count Days Without Meetings
+class Solution:
+    def countDays(self, days: int, meetings: list[list[int]]) -> int:
+        t = 0
+        for i, j in sorted(meetings, key=lambda x: x[0]):
+            if j <= t:
+                continue
+            elif i > t:
+                days -= j - i + 1
+            else:
+                days -= j - t
+            t = j
+            
+        return days
          
         
         
