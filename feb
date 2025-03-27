@@ -955,6 +955,17 @@ class Solution:
             if (num - median) % x != 0:
                 return -1  
         return sum(abs(num - median) // x for num in arr)
+2780. Minimum Index of a Valid Split
+class Solution:
+    def minimumIndex(self, nums: List[int]) -> int:
+        c= 0
+        d, c1 = max(Counter(nums).items(), key=lambda x: x[1])
+        for i, x in enumerate(nums):
+            c+= x == d
+            c1-= x == d
+            if c> (i + 1) // 2 and c1 > (len(nums) - (i + 1)) // 2:
+                return i
+        return -1
         
          
         
