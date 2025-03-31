@@ -1096,6 +1096,7 @@ class Solution:
             else:
                 merged.append(r)
         return [end - start + 1 for start, end in merged]
+
 2551. Put Marbles in Bags
 class Solution:
     def putMarbles(self, weights: List[int], k: int) -> int:
