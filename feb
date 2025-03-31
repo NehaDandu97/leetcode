@@ -1013,8 +1013,7 @@ class Solution:
                 count += 1
                 while n % i == 0:
                     n //= i
-            i += 2
-        
+            i += 2 
         if n > 1:
             count += 1
         return count
