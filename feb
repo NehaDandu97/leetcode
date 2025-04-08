@@ -1180,6 +1180,14 @@ class Solution:
         bitmap = 1
         for num in nums: bitmap|= bitmap << num
         return bool(bitmap & (1 << target)) 
+3396. Minimum Number of Operations to Make Elements in Array Distinct
+class Solution:
+    def minimumOperations(self, nums: List[int]) -> int:
+        a=0
+        while len(nums)>len(set(nums)):
+            nums=nums[3:]
+            a+=1
+        return a
         
 
         
