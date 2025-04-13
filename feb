@@ -1290,6 +1290,26 @@ class Solution:
                 ans -= total_non_zero   
 
         return ans
+1922. Count Good Numbers
+class Solution:
+    m=10**9+7
+    def countGoodNumbers(self, n: int) -> int:
+        even=(n+1)//2
+        odd=n//2
+        e=self.fun(5,even)
+        o=self.fun(4,odd)
+        return (e*o)%self.m
+
+    def fun(self,a,b):
+        r=1
+        a%=self.m
+
+        while b>0:
+            if b%2==1:
+                r=(r*a)%self.m
+            a=(a*a)%self.m
+            b//=2
+        return r
         
         
 
