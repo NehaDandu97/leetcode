@@ -1330,6 +1330,7 @@ class Solution:
                         count += 1
         return count
 2537. Count the Number of Good Subarrays
+
 class Solution:
     def countGood(self, nums: List[int], k: int) -> int:
         n=len(nums)
