@@ -1346,6 +1346,19 @@ class Solution:
                 l+=1
         return ans
 
+2176. Count Equal and Divisible Pairs in an Array
+
+class Solution:
+    def countPairs(self, nums: List[int], k: int) -> int:
+        a=[[] for i in range(101)]
+        c=0
+        for j, x in enumerate(nums):
+            for i in a[x]:
+                c+=(i*j%k==0)
+            a[x].append(j)
+        return c
+
+
         
         
 
