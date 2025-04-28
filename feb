@@ -1503,6 +1503,25 @@ class Solution:
             if (nums[i] + nums[i+2]) * 2 == nums[i+1]:
                 count += 1
         return count
+
+2302. Count Subarrays With Score Less Than K
+
+class Solution:
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        start = 0
+        sum_ = 0
+        count = 0
+        
+        for end in range(len(nums)):
+            sum_ += nums[end]
+            
+            while sum_ * (end - start + 1) >= k:
+                sum_ -= nums[start]
+                start += 1
+            
+            count += (end - start + 1)
+        
+        return count
         
 
 
