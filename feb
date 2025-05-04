@@ -1638,6 +1638,20 @@ class Solution:
             if valid:
                 res = min(res, top_swaps, bottom_swaps)
         return -1 if res == float('inf') else res
+1128. Number of Equivalent Domino Pairs
+
+class Solution:
+    def numEquivDominoPairs(self, dominoes: List[List[int]]) -> int:
+        f=[0]*100
+        c=0
+        for i, j in dominoes:
+            if i<j:
+                x=10*i+j
+            else:
+                x=10*j+i
+            c+=f[x]
+            f[x]+=1
+        return c
         
 
 
