@@ -2087,6 +2087,13 @@ class Solution:
             x=nums[i]
             return max(x+f(i+1, c),(x^k)+f(i+1,1-c))
         return f(0, 0)
+2942. Find Words Containing Character
+
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        return [i for i, w in enumerate(words) if w.find(x)!=-1]
+        
+        
         
                     
 
