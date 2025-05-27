@@ -2146,6 +2146,11 @@ class Solution:
             max_path_value = max(max_path_value, dfs(i, colors[i]))
 
         return -1 if max_path_value == float('inf') else max_path_value
+2894. Divisible and Non-divisible Sums Difference
+
+class Solution:
+    def differenceOfSums(self, n: int, m: int) -> int:
+        return n*(n+1)//2-m*(n//m)*(n//m+1)
         
         
         
