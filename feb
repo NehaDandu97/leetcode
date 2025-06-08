@@ -2381,6 +2381,23 @@ class Solution:
     
         indices.sort()
         return ''.join(s[i] for i in indices)
+386. Lexicographical Numbers
+
+class Solution:
+    def lexicalOrder(self, n: int) -> List[int]:
+        l=[]
+        c=1
+        while len(l)<n:
+            l.append(c)
+            if c*10<=n:
+                c*=10
+            else:
+                while c%10==9 or c==n:
+                    c//=10
+                c+=1
+        return l
+    
+        
 
                 
                 
