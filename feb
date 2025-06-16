@@ -2533,6 +2533,18 @@ class Solution:
                     break
 
         return int(mx)-int(mn)
+2016. Maximum Difference Between Increasing Elements
+
+class Solution:
+    def maximumDifference(self, nums: List[int]) -> int:
+        a, n=10**9, len(nums)
+        b=-1
+        for x in nums:
+            if x<=a:
+                a=x
+            else:
+                b=max(b, x-a)
+        return b
         
         
 
