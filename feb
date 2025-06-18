@@ -2564,6 +2564,18 @@ def comb(m: int, n: int) -> int:
 class Solution:
     def countGoodArrays(self, n: int, m: int, k: int) -> int:
         return comb(n - 1, k) * m * pow(m - 1, n - k - 1, mod) % mod
+2966. Divide Array Into Arrays With Max Difference
+
+class Solution:
+    def divideArray(self, nums: List[int], k: int) -> List[List[int]]:
+        l=[] 
+        n=len(nums)
+        nums.sort() 
+        for i in range(0,n-2,3): 
+            if nums[i+2]-nums[i]>k:
+                return [] 
+            l.append(nums[i:i+3]) 
+        return l 
         
         
 
