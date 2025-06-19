@@ -2576,6 +2576,11 @@ class Solution:
                 return [] 
             l.append(nums[i:i+3]) 
         return l 
+2294. Partition Array Such That Maximum Difference Is K
+
+class Solution:
+    def partitionArray(self, a: List[int], k: int) -> int:
+        return len({*accumulate(sorted(a),lambda q,v:(q,v)[v-q>k])})
         
         
 
