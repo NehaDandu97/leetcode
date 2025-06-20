@@ -2581,6 +2581,18 @@ class Solution:
 class Solution:
     def partitionArray(self, a: List[int], k: int) -> int:
         return len({*accumulate(sorted(a),lambda q,v:(q,v)[v-q>k])})
+3443. Maximum Manhattan Distance After K Changes
+
+class Solution:
+    def maxDistance(self, s: str, k: int) -> int:
+        x,y,ans=0,0,0
+        for idx,ch in enumerate(s):
+            if ch=='N': y+=1
+            if ch=='S': y-=1
+            if ch=='W': x-=1
+            if ch=='E': x+=1
+            ans=max(ans,min(abs(x)+abs(y)+2*k,idx+1))
+        return ans
         
         
 
