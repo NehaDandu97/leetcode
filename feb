@@ -2593,6 +2593,21 @@ class Solution:
             if ch=='E': x+=1
             ans=max(ans,min(abs(x)+abs(y)+2*k,idx+1))
         return ans
+3085. Minimum Deletions to Make String K-Special
+
+class Solution:
+    def minimumDeletions(self, word: str, k: int) -> int:
+        c= Counter(word)
+        x = float('inf')
+        for i in c.values():
+            r= 0
+            for j in c.values():
+                if j < i:
+                    r+= j
+                elif j > i + k:
+                    r+= j - (i + k)
+            x= min(r, x)
+        return x
         
         
 
