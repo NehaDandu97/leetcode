@@ -2608,6 +2608,16 @@ class Solution:
                     r+= j - (i + k)
             x= min(r, x)
         return x
+2138. Divide a String Into Groups of Size k
+
+class Solution:
+    def divideString(self, s: str, k: int, fill: str) -> List[str]:
+        while len(s) % k:
+            s += fill
+        r= []
+        for i in range(0, len(s), k):
+            r.append(s[i:i+k])
+        return r
         
         
 
