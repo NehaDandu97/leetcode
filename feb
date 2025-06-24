@@ -2658,6 +2658,21 @@ class Solution:
                         return sum(result)
             length += 1
         return sum(result)
+2200. Find All K-Distant Indices in an Array
+
+class Solution:
+    def findKDistantIndices(self, nums: List[int], key: int, k: int) -> List[int]:
+        n=len(nums)
+        a=[]
+        l=0
+        for i, x in enumerate(nums):
+            if x==key:
+                z=min(n-1, i+k)
+                l=max(l, i-k)
+                while l<=z:
+                    a.append(l)
+                    l+=1
+        return a
         
         
 
