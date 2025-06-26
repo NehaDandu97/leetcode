@@ -2697,6 +2697,27 @@ class Solution:
             else:
                 low = mid
         return low + 1
+2311. Longest Binary Subsequence Less Than or Equal to K
+
+class Solution:
+    def longestSubsequence(self, s: str, k: int) -> int:
+        n = len(s)
+        z = s.count('0')
+        o= 0
+        a= 0
+        p= 1
+
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                if a+ p > k:
+                    continue
+                a+= p
+                o += 1
+            p<<= 1
+            if p> k:
+                break
+
+        return z + o
         
         
 
