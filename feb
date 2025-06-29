@@ -2762,6 +2762,19 @@ class Solution:
         a.sort(key=lambda x: -x[0])
         t = sorted(a[:k], key=lambda x: x[1])
         return [j for j, _ in t]
+1498. Number of Subsequences That Satisfy the Given Sum Condition
+
+class Solution:
+    def numSubseq(self, nums: List[int], target: int) -> int:
+        m= 10 ** 9 + 7
+        a = 0
+        nums.sort()
+        for i, n in enumerate(nums):
+            if 2 * n > target:
+                break
+            j = bisect.bisect(nums, target - n, lo=i)
+            a += pow(2, j - i - 1, m)
+        return a % m
         
         
 
