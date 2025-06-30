@@ -2775,6 +2775,16 @@ class Solution:
             j = bisect.bisect(nums, target - n, lo=i)
             a += pow(2, j - i - 1, m)
         return a % m
+594. Longest Harmonious Subsequence
+
+class Solution:
+    def findLHS(self, nums: List[int]) -> int:
+        x = Counter(nums)
+        return max(
+            0 if x[num + 1] == 0 else i + x[num + 1]
+            for num, i
+            in x.items()
+        )
         
         
 
