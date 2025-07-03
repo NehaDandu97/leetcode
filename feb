@@ -2841,6 +2841,17 @@ class Solution:
 
         invalid = sum(dp[len(groups):k]) % self.MOD
         return (total - invalid + self.MOD) % self.MOD
+3304. Find the K-th Character in String Game I
+
+class Solution:
+    def kthCharacter(self, k: int) -> str:
+        x= ['a']
+        while len(x) < k:
+            size = len(x)
+            for i in range(size):
+                a = chr(ord('a') + ((ord(x[i]) - ord('a') + 1) % 26))
+                x.append(a)
+        return x[k - 1]
         
         
 
