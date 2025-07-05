@@ -2866,6 +2866,12 @@ class Solution:
                     c+= 1
             length //= 2
         return chr(ord('a') + (c % 26))
+1394. Find Lucky Integer in an Array
+
+class Solution:
+    def findLucky(self, arr: List[int]) -> int:
+        return max((a for a, i in Counter(arr).items() if a==i), default=-1)
+               
         
         
         
