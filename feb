@@ -3087,6 +3087,21 @@ class Solution:
                 i=ord(c)-97 if ord(c)>=97 else ord(c)-65
                 v|=(1<<((vowels>>i)&1))
         return v==3
+3201. Find the Maximum Length of Valid Subsequence I
+
+class Solution:
+    def maximumLength(self, nums: List[int]) -> int:
+        even=0
+        odd=0
+        c = 1
+        for i in range(len(nums)):
+            if nums[i] % 2 == 0:
+                even += 1
+            else:
+                odd += 1
+            if i > 0 and nums[i] % 2 != nums[i-1] % 2:
+                c+= 1    
+        return max(c,even,odd)
 
 
         
