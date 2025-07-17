@@ -3102,6 +3102,15 @@ class Solution:
             if i > 0 and nums[i] % 2 != nums[i-1] % 2:
                 c+= 1    
         return max(c,even,odd)
+Find the Maximum Length of Valid Subsequence II
+
+class Solution:
+    def maximumLength(self, a: List[int], k: int) -> int:
+        x = Counter()
+        for p in product((i%k for i in a),range(k)):
+            x[p] = x[p[::-1]]+1
+
+        return max(x.values())
 
 
         
