@@ -3253,8 +3253,8 @@ class Solution:
             
             res=max(res, tot)            
         return res
-1717. Maximum Score From Removing Substrings
 
+1717. Maximum Score From Removing Substrings
 class Solution:
     def maximumGain(self, s: str, x: int, y: int) -> int:
         r = 0
@@ -3270,8 +3270,8 @@ class Solution:
             s = st
 
         return r
-2322. Minimum Score After Removals on a Tree
 
+2322. Minimum Score After Removals on a Tree
 class Solution:
     def minimumScore(self, nums: List[int], edges: List[List[int]]) -> int:
         def dfs(i: int,fa: int) -> int:
@@ -3304,7 +3304,18 @@ class Solution:
             for j in g[i]:
                 s1 = dfs(i,j)
                 dfs2(i,j)
-        return ans                                   
+        return ans  
+
+3487. Maximum Unique Subarray Sum After Deletion
+class Solution:
+    def maxSum(self, nums: List[int]) -> int:
+        c=0
+        for i in set(nums) :
+            if i>0:
+                c+=i
+        if c==0:
+            return max(nums)
+        return c
 
 
         
