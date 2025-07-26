@@ -3087,8 +3087,8 @@ class Solution:
                 i=ord(c)-97 if ord(c)>=97 else ord(c)-65
                 v|=(1<<((vowels>>i)&1))
         return v==3
-3201. Find the Maximum Length of Valid Subsequence I
 
+3201. Find the Maximum Length of Valid Subsequence I
 class Solution:
     def maximumLength(self, nums: List[int]) -> int:
         even=0
@@ -3111,8 +3111,8 @@ class Solution:
             x[p] = x[p[::-1]]+1
 
         return max(x.values())
-2163. Minimum Difference in Sums After Removal of Elements
 
+2163. Minimum Difference in Sums After Removal of Elements
 class Solution:
     def minimumDifference(self, nums: List[int]) -> int:
         n=len(nums)//3
@@ -3137,8 +3137,8 @@ class Solution:
             Sum+=x-pqR[0]
             heapreplace(pqR, x)
         return ans
-1233. Remove Sub-Folders from the Filesystem
 
+1233. Remove Sub-Folders from the Filesystem
 class Folder:
     def __init__(self):
         self.children = {} 
@@ -3169,8 +3169,8 @@ class Solution:
                 res_paths.append(path)
         
         return res_paths
-1948. Delete Duplicate Folders in System
 
+1948. Delete Duplicate Folders in System
 from collections import defaultdict
 
 class Node:
@@ -3221,8 +3221,8 @@ class Solution:
             dfs2(child)
         
         return result
-1957. Delete Characters to Make Fancy String
 
+1957. Delete Characters to Make Fancy String
 class Solution:
     def makeFancyString(self, s: str) -> str:
         l=[]
@@ -3235,8 +3235,8 @@ class Solution:
             if c<=2:
                 l.append(s[i])
         return ''.join(l)
-1695. Maximum Erasure Value
 
+1695. Maximum Erasure Value
 class Solution:
     def maximumUniqueSubarray(self, nums: List[int]) -> int:
         counter=defaultdict(int) 
@@ -3316,6 +3316,24 @@ class Solution:
         if c==0:
             return max(nums)
         return c
+
+3480. Maximize Subarrays After Removing One Conflicting Pair
+class Solution:
+    def maxSubarrays(self, N: int, A: List[List[int]]) -> int:
+        right = [[] for _ in range(N + 1)]
+        for a, b in A:
+            right[max(a, b)].append(min(a, b))
+        
+        ans = 0
+        left = [0, 0]
+        imp = [0] * (N + 1)
+        for r in range(1, N + 1):
+            for l in right[r]:
+                left = max(left, [l, left[0]], [left[0], l])
+            ans += r - left[0]
+            imp[left[0]] += left[0] - left[1]
+        
+        return ans + max(imp)
 
 
         
