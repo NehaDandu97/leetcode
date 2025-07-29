@@ -3370,6 +3370,21 @@ class Solution:
             if curr_or == m:
                 c += 1
         return c
+
+2411. Smallest Subarrays With Maximum Bitwise OR
+class Solution:
+    def smallestSubarrays(self, nums: list[int]) -> list[int]:
+        l = len(nums)
+        a = [0] * l
+        for i in range(l):
+            x = nums[i]
+            a[i] = 1
+            j = i - 1
+            while j >= 0 and nums[j] | x != nums[j]:
+                a[j] = i - j + 1
+                nums[j] |= x
+                j -= 1
+        return a
         
         
 
