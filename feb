@@ -3385,6 +3385,20 @@ class Solution:
                 nums[j] |= x
                 j -= 1
         return a
+
+2419. Longest Subarray With Maximum Bitwise AND
+class Solution(object):
+    def longestSubarray(self, nums):
+        a, c = 0, 0
+        
+        l = max(nums)
+        for i in nums:
+            if i == l:
+                c += 1
+            else:
+                c = 0
+            a = max(a, c)
+        return a
         
         
 
