@@ -3399,6 +3399,22 @@ class Solution(object):
                 c = 0
             a = max(a, c)
         return a
+898. Bitwise ORs of Subarrays
+class Solution:
+    def subarrayBitwiseORs(self, A: List[int]) -> int:
+        s = set(A)
+        t = set()
+        t.add(A[0])
+        for i in A[1:]:
+            temp = set()
+            for j in t:
+                temp.add(i | j)
+                s.add(i | j)
+            t = temp
+            t.add(i)
+
+        return len(s)
+        
         
         
 
