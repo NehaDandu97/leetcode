@@ -3597,6 +3597,11 @@ class Solution:
             )
 
         return calc_prob(units, units)
+
+231. Power of Two
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        return n>0 and (1<<30)%n==0
         
         
         
