@@ -3684,6 +3684,15 @@ class Solution:
         while n % 3 == 0:
             n //= 3
         return n == 1
+
+2264. Largest 3-Same-Digit Number in String
+class Solution:
+    def largestGoodInteger(self, num: str) -> str:
+        for i in range(9,-1, -1): 
+            check = (str(i) * 3)
+            if check in num: 
+                return check
+        return ""
         
         
         
