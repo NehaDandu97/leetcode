@@ -3698,6 +3698,17 @@ class Solution:
 class Solution:
     def isPowerOfFour(self, n: int) -> bool:
         return n > 0 and (n & (n - 1)) == 0 and (n & 0x55555555) != 0
+
+1323. Maximum 69 Number
+class Solution:
+    def maximum69Number (self, num: int) -> int:
+        p=(1000, 100, 10, 1)
+        for i in p:
+            r=num//i%10
+            if r==6:
+                return num+3*i
+        return num
+        
         
         
         
