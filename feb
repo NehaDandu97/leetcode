@@ -3846,6 +3846,20 @@ class Solution:
                 res = min(helper(0,i,0,j)+helper(0,i,j+1,n-1)+helper(i+1,m-1,0,n-1),res)
                 res = min(helper(0,i,0,j)+helper(i+1,m-1,0,j)+helper(0,m-1,j+1,n-1),res)               
         return res
+
+1493. Longest Subarray of 1's After Deleting One Element
+class Solution:
+    def longestSubarray(self, nums: List[int]) -> int:
+        n, l, zeros, ans=len(nums), 0, 0, 0
+        for r, x in enumerate(nums):
+            zeros+=(x==0)
+            if zeros>1:
+                zeros-=(nums[l]==0)
+                l+=1
+            ans=max(ans, r-l)
+        return ans
+            
+        
         
 
              
