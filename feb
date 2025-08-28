@@ -3913,6 +3913,21 @@ class Solution:
                         vee = dfs(row + dr, col + dc, dr, dc, 2, False)
                         ans = max(ans, vee)
         return ans + hasOne
+
+3446. Sort Matrix by Diagonals
+class Solution:
+    def sortMatrix(self, grid: List[List[int]]) -> List[List[int]]:
+        n=len(grid)
+        for d in range(n-2, 0, -1):
+            diag=sorted(grid[i][i+d] for i in range(n-d))
+            for i, x in enumerate(diag):
+                grid[i][i+d]=x
+        for d in range(n-1):
+            diag=sorted((grid[j+d][j] for j in range(n-d)), reverse=True)
+            for j, x in enumerate(diag):
+                grid[j+d][j]=x
+        return grid
+        
         
             
         
