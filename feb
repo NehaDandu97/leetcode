@@ -4053,6 +4053,12 @@ class Solution:
                     if bot == top:
                         break
         return result
+
+3516. Find Closest Person
+class Solution:
+    def findClosest(self, x: int, y: int, z: int) -> int:
+        return 0 if abs(x-z)==abs(y-z) else 2-(abs(x-z)<abs(y-z))
+        
         
         
         
