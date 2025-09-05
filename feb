@@ -4058,6 +4058,19 @@ class Solution:
 class Solution:
     def findClosest(self, x: int, y: int, z: int) -> int:
         return 0 if abs(x-z)==abs(y-z) else 2-(abs(x-z)<abs(y-z))
+
+2749. Minimum Operations to Make the Integer Zero
+class Solution:
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        a, c=num1, 1
+        while True:
+            a-=num2
+            if a<c: return -1
+            if c>=a.bit_count():
+                return c
+            c+=1
+        return -1
+
         
         
         
