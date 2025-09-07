@@ -4083,6 +4083,11 @@ class Solution:
 
         return sum((get_subtotal(r+1) - get_subtotal(l) + 1) // 2 for l, r in queries)
 
+1304. Find N Unique Integers Sum up to Zero
+class Solution:
+    def sumZero(self, n: int) -> List[int]:
+        return list(range(-(n>>1), 0))+list(range((n&1)==0, (n>>1)+1))
+
 
         
         
