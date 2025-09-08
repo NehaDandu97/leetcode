@@ -4088,6 +4088,28 @@ class Solution:
     def sumZero(self, n: int) -> List[int]:
         return list(range(-(n>>1), 0))+list(range((n&1)==0, (n>>1)+1))
 
+1317. Convert Integer to the Sum of Two No-Zero Integers
+class Solution:
+    def getNoZeroIntegers(self, n: int) -> List[int]:
+        a, b, c=0, 0, 1
+        while n>0:
+            n, d=divmod(n, 10)
+            if d==0:
+                a+=5*c
+                b+=5*c
+                n-=1
+            elif d==1 and n>=1:
+                a+=6*c
+                b+=5*c
+                n-=1
+            else:
+                a+=(d-d//2)*c
+                b+=(d//2)*c
+            c*=10
+
+        return [a, b]
+        
+
 
         
         
