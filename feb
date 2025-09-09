@@ -4108,6 +4108,22 @@ class Solution:
             c*=10
 
         return [a, b]
+
+2327. Number of People Aware of a Secretclass Solution:
+    def peopleAwareOfSecret(self, n: int, delay: int, forget: int) -> int:
+        res = 0
+        d = [0] * (n + 1)
+        d[1] = 1
+        a=0 
+        for t in range(2, n +1):
+            if t - delay > 0:
+                a += d[t -delay]
+            if t - forget > 0:
+                a -= d[t - forget]    
+            d[t] = a
+        for i in range(n - forget + 1, n+1):
+            res += d[i]
+        return res % ((10 ** 9) + 7)
         
 
 
