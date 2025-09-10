@@ -4124,6 +4124,23 @@ class Solution:
         for i in range(n - forget + 1, n+1):
             res += d[i]
         return res % ((10 ** 9) + 7)
+
+1733. Minimum Number of People to Teach
+class Solution:
+    def minimumTeachings(self, n: int, languages: List[List[int]], friendships: List[List[int]]) -> int:
+        s=set()
+        for i,j in friendships:
+            if not set(languages[i-1]) & set(languages[j-1]):
+                s.add(i-1)
+                s.add(j-1)
+        if not s:
+            return 0
+        c=[0]*n
+        for x in s:
+            for y in languages[x]:
+                c[y-1]+=1
+        return len(s)-max(c)
+        
         
 
 
