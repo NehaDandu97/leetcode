@@ -4161,6 +4161,12 @@ class Solution:
         return (''.join(s1))
 __import__("atexit").register(lambda: open("display_runtime.txt", "w").write("0"))
 __import__("atexit").register(lambda: open("display_memory.txt", "w").write("0"))
+
+3227. Vowels Game in a String
+class Solution:
+    def doesAliceWin(self, s: str) -> bool:
+        return any(((0x208222>>(ord(i)&31))&1) for i in s)
+        
         
         
         
