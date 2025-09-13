@@ -4166,6 +4166,24 @@ __import__("atexit").register(lambda: open("display_memory.txt", "w").write("0")
 class Solution:
     def doesAliceWin(self, s: str) -> bool:
         return any(((0x208222>>(ord(i)&31))&1) for i in s)
+
+3541. Find Most Frequent Vowel and Consonant
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+        vowels='aeiou'
+        x=[]
+        y=[]
+        for i in set(s):
+            if i in vowels:
+                x.append(s.count(i))
+            else:
+                y.append(s.count(i))
+        if x and y:
+            return (max(x)+ max(y))
+        elif x:
+            return(max(x))
+        else:
+            return(max(y))  
         
         
         
