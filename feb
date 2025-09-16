@@ -4207,6 +4207,21 @@ class Solution:
 class Solution:
     def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
          return sum(1 for i in text.split() if not any(j in brokenLetters for j in i))
+
+2197. Replace Non-Coprime Numbers in Array
+import math
+class Solution:
+    def replaceNonCoprimes(self, nums: List[int]) -> List[int]:
+        st = []
+
+        for num in nums:
+            st.append(num)
+            while len(st) >= 2 and math.gcd(st[-1], st[-2]) > 1:
+                a = st.pop()
+                b = st.pop()
+                st.append(math.lcm(a, b))
+        
+        return st
        
         
         
