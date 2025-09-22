@@ -4401,6 +4401,11 @@ class MovieRentingSystem:
     def report(self) -> list[list[int]]:
         return [[shop, movie] for _, shop, movie in self.rented[:5]]
 
+3005. Count Elements With Maximum Frequency
+class Solution:
+    def maxFrequencyElements(self, nums: List[int]) -> int:
+         return reduce(mul, max(Counter(Counter(nums).values()).items()))
+
 
         
         
