@@ -4512,6 +4512,16 @@ class Solution(object):
                     dp[i][j] = min(dp[i][j], cost)
         
         return dp[0][n - 1]
+
+2221. Find Triangular Sum of an Array
+class Solution:
+    def triangularSum(self, nums: List[int]) -> int:
+        l=len(nums)
+        while(l>1):
+            for i in range(len(nums)-1):
+                nums[i]=(nums[i]+nums[i+1])%10
+            l-=1
+        return nums[0]
         
         
 
