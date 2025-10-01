@@ -4522,6 +4522,12 @@ class Solution:
                 nums[i]=(nums[i]+nums[i+1])%10
             l-=1
         return nums[0]
+
+1518. Water Bottles
+class Solution:
+    def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
+        return numBottles+(numBottles-1)//(numExchange-1)
+        
         
         
 
