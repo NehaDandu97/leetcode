@@ -4527,6 +4527,22 @@ class Solution:
 class Solution:
     def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
         return numBottles+(numBottles-1)//(numExchange-1)
+
+3100. Water Bottles II
+class Solution:
+    def maxBottlesDrunk(self, numBottles: int, numExchange: int) -> int:
+        d=0
+        eb=0
+        while numBottles>0:
+            while numBottles>0 and eb<numExchange:
+                d+=1
+                eb+=1
+                numBottles-=1
+            if eb==numExchange:
+                numExchange+=1
+                eb=0
+                numBottles+=1
+        return d
         
         
         
