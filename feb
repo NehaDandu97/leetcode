@@ -4576,6 +4576,23 @@ class Solution:
                     visited[nx][ny] = True
         
         return trapped_water
+
+11. Container With Most Water
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        l=0
+        r=len(height)-1
+        area=0
+        while l<r:
+            if height[l]<height[r]:
+                a=height[l]*(r-l)
+                l+=1
+            else:
+                a=height[r]*(r-l)
+                r-=1
+            if area<a:
+                area=a
+        return area
         
         
         
