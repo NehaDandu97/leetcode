@@ -4641,6 +4641,28 @@ class Solution:
                 if 0 <= new_row < n and 0 <= new_col < n and not visited[new_row][new_col]:
                     heapq.heappush(min_heap, (grid[new_row][new_col], new_row, new_col))
         return max_time
+
+1488. Avoid Flood in The City
+from bisect import bisect_right
+from sortedcontainers import SortedList
+
+class Solution:
+    def avoidFlood(self, rains: List[int]) -> List[int]:
+        res, full, dry = [-1]*len(rains), {}, SortedList()
+        for i, lake in enumerate(rains):
+            if lake == 0:
+                dry.add(i)
+                res[i] = 1
+            elif lake in full:
+                j = dry.bisect_right(full[lake])
+                if j == len(dry):
+                    return []
+                res[dry[j]] = lake
+                dry.pop(j)
+                full[lake] = i
+            else:
+                full[lake] = i
+        return res
         
         
         
