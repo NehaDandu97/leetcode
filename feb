@@ -4704,6 +4704,14 @@ class Solution:
             total_time += max_time
 
         return total_time + prefix_skills[-1] * energy[-1]
+
+3147. Taking Maximum Energy From the Mystic Dungeon
+class Solution:
+    def maximumEnergy(self, energy: List[int], k: int) -> int:
+        l = energy[-k:][::-1]
+        for i in range(len(energy) - k - 1, -1, -1):
+            l.append(l[-k] + energy[i])
+        return max(l)
         
         
         
