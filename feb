@@ -4965,6 +4965,17 @@ class Solution:
                 l += 1
         
         return ans
+
+3461. Check If Digits Are Equal in String After Operations I
+class Solution:
+    def hasSameDigits(self, s: str) -> bool:
+        d=[int(i) for i in s]
+        l=len(d)
+        while l>2:
+            for j in range(l-1):
+                d[j]=(d[j]+d[j+1])%10
+            l-=1
+        return d[0]==d[1]
         
         
         
