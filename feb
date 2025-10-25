@@ -4995,6 +4995,12 @@ class Solution:
                 return x
             x += 1    
         return 0
+
+1716. Calculate Money in Leetcode Bank
+class Solution:
+    def totalMoney(self, n: int) -> int:
+        w,x=divmod(n,7)
+        return (w*(49+7*w)+x*(2*w+x+1))//2
         
         
         
