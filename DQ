@@ -5060,6 +5060,28 @@ class Solution:
                 c+=l[a]*l[a+1]
                 a+=1
         return c
+
+3354. Make Array Elements Equal to Zero
+class Solution:
+    def countValidSelections(self, nums: List[int]) -> int:
+        def selections(curr,dir):
+            arr=nums[:]
+            while 0<=curr<len(arr):
+                if arr[curr]==0:
+                    curr+=dir
+                else:
+                    arr[curr]-=1
+                    dir*=-1
+                    curr+=dir
+            return all(i==0 for i in arr)
+        r=0
+        for x in range(len(nums)):
+            if nums[x]==0:
+                if selections(x,1):
+                    r+=1
+                if selections(x,-1):
+                    r+=1
+        return r
         
         
         
