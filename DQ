@@ -5082,6 +5082,13 @@ class Solution:
                 if selections(x,-1):
                     r+=1
         return r
+
+3370. Smallest Number With All Set Bits
+class Solution:
+    def smallestNumber(self, n: int) -> int:
+        while n&(n+1):
+            n|=n+1
+        return n
         
         
         
