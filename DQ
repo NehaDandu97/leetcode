@@ -5112,6 +5112,28 @@ class Solution:
             else:
                 l.append(i)
         return l
+
+3217. Delete Nodes From Linked List Present in Array
+class Solution:
+    def modifiedList(self, nums: List[int], head: Optional[ListNode]) -> Optional[ListNode]:
+        t = set(nums)
+        l= []
+        c= head
+        while c:
+            if c.val not in t:
+                l.append(c.val)
+            c = c.next
+        if not l:
+            return None
+        c = head
+        p = None
+        for i in l:
+            c.val = i
+            p = c
+            c= c.next
+        if p:
+            p.next = None
+        return head
         
         
         
