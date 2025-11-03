@@ -5154,6 +5154,22 @@ class Solution:
         for r, c in guards:
             self.solve(grid, r, c, m, n)
         return sum(grid[i][j] == 0 for i in range(m) for j in range(n))
+
+1578. Minimum Time to Make Rope Colorful
+class Solution:
+    def minCost(self, colors: str, neededTime: List[int]) -> int:
+        n=len(colors)
+        x=colors[0]
+        y=neededTime[0]
+        r=0
+        for i in range(1,n):
+            if colors[i]==x:
+                r+=min(neededTime[i],y)
+                y=max(neededTime[i],y)
+            else:
+                y=neededTime[i]
+                x=colors[i]
+        return r
         
         
         
