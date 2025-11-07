@@ -5283,6 +5283,39 @@ class Solution:
             else:
                 online_check[x] = 0
         return res
+
+2528. Maximize the Minimum Powered City
+from typing import List
+class Solution:
+    def maxPower(self, stations: List[int], r: int, k: int) -> int:
+        n = len(stations)
+        diff = [0] * (n + 1)
+        for i in range(n):
+            diff[max(0, i - r)] += stations[i]
+            diff[min(n, i + r + 1)] -= stations[i]
+        def check(target):
+            diff_copy = diff[:]
+            prefix = 0
+            available = k
+
+            for i in range(n):
+                prefix += diff_copy[i]
+                if prefix < target:
+                    need = target - prefix
+                    if need > available:
+                        return False
+                    available -= need
+                    prefix += need
+                    diff_copy[min(n, i + r * 2 + 1)] -= need
+            return True
+        left, right = min(stations), sum(stations) + k
+        while left < right:
+            mid = left + (right - left + 1) // 2
+            if check(mid):
+                left = mid
+            else:
+                right = mid - 1
+        return left
         
         
         
