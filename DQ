@@ -5316,6 +5316,15 @@ class Solution:
             else:
                 right = mid - 1
         return left
+
+1611. Minimum One Bit Operations to Make Integers Zero
+class Solution:
+    def minimumOneBitOperations(self, n: int) -> int:
+        a=0
+        while n:
+            a=-a-(n^(n-1))
+            n&=n-1
+        return abs(a)
         
         
         
