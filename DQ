@@ -5335,6 +5335,21 @@ class Solution:
             num1%=num2
             num1,num2=num2,num1
         return c
+
+3542. Minimum Operations to Convert All Elements to Zero
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        s=[0]*(len(nums)+1)
+        s_top=0
+        r=0
+        for i in nums:
+            while s[s_top]>i:
+                s_top-=1
+                r+=1
+            if s[s_top]!=i:
+                s_top+=1
+                s[s_top]=i
+        return r+s_top
         
         
         
