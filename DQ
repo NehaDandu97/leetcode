@@ -5372,6 +5372,31 @@ class Solution:
                         dp[i - ones][j - zeros] + 1
                     )
         return dp[n][m]
+
+2654. Minimum Number of Operations to Make All Array Elements Equal to 1
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        n=len(nums)
+        s=0
+        g=0
+        for i in nums:
+            if i==1:
+                s+=1
+            g=gcd(g,i)
+        if s>0:
+            return n-s
+        if g>1:
+            return -1
+        
+        m_len=n
+        for j in range(n):
+            g=0
+            for k in range(j,n):
+                g=gcd(g,nums[k])
+                if g==1:
+                    m_len=min(m_len,k-j+1)
+                    break
+        return m_len+n-2
         
         
         
