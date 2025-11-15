@@ -5426,6 +5426,47 @@ class Solution:
             for c in range(1, n):
                 ans[r][c] += ans[r][c - 1]
         return ans
+
+3234. Count the Number of Substrings With Dominant Ones
+import bisect
+
+class Solution:
+    def numberOfSubstrings(self, s: str) -> int:
+        n = len(s)
+        total_count = 0
+        
+        zeros_pos = [i for i, char in enumerate(s) if char == '0']
+        zeros_pos.append(n)
+        
+        K = int(n**0.5)
+        
+        for i in range(n):
+            
+            z_idx = bisect.bisect_left(zeros_pos, i)
+            
+            pos_first_zero = zeros_pos[z_idx]
+            total_count += (pos_first_zero - i)
+            
+            for z in range(1, K + 1):
+                
+                current_z_pos_idx = z_idx + z - 1
+                
+                if current_z_pos_idx >= len(zeros_pos) - 1:
+                    break 
+                    
+                j_start_window = zeros_pos[current_z_pos_idx]
+                
+                j_end_window = zeros_pos[current_z_pos_idx + 1] - 1
+                
+                min_j_required = z * z + z + i - 1
+                
+                start_j_valid = max(j_start_window, min_j_required)
+                end_j_valid = j_end_window
+                
+                if start_j_valid <= end_j_valid:
+                    total_count += (end_j_valid - start_j_valid + 1)
+
+        return total_count
         
         
         
