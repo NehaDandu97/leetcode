@@ -5467,6 +5467,20 @@ class Solution:
                     total_count += (end_j_valid - start_j_valid + 1)
 
         return total_count
+
+1513. Number of Substrings With Only 1s
+class Solution:
+    def numSub(self, s: str) -> int:
+        MOD=10**9+7
+        c=0
+        a=0
+        for i in s:
+            if i=='1':
+                c=(c+1)%MOD
+            else:
+                c=0
+            a=(a+c)%MOD
+        return a
         
         
         
