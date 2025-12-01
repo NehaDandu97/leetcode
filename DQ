@@ -26,11 +26,6 @@ class Solution:
 
 
 
-
-
-
-
-
 3105. Longest Strictly Increasing or Strictly Decreasing Subarray
 class Solution:
     def longestMonotonicSubarray(self, nums: List[int]) -> int:
