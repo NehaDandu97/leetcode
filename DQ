@@ -10,6 +10,8 @@ class Solution:
 
 
 
+
+
 1752. Check if Array Is Sorted and Rotated
 class Solution:
     def check(self, nums: List[int]) -> bool:
@@ -21,6 +23,9 @@ class Solution:
         if c>1:
             return False
         return True
+
+
+
 
 
 
