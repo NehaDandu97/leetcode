@@ -1580,7 +1580,6 @@ class Solution:
 
             return False
 
-
         tasks.sort()
         workers.sort(reverse = True)
         n = min(len(tasks), len(workers)) + 1
