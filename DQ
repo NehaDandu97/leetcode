@@ -1,11 +1,10 @@
-3151. Special Array I
+53151. Special Array I
 class Solution:
     def isArraySpecial(self, nums: List[int]) -> bool:
         for i in range(len(nums)-1):
             if nums[i]%2 == nums[i+1]%2:
                 return False
         return True
-
 1752. Check if Array Is Sorted and Rotated
 class Solution:
     def check(self, nums: List[int]) -> bool:
