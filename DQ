@@ -1,4 +1,4 @@
-53151. Special Array I
+y⁶53151. Special Array I
 class Solution:
     def isArraySpecial(self, nums: List[int]) -> bool:
         for i in range(len(nums)-1):
@@ -5793,7 +5793,19 @@ class Solution:
             else: 
                 ans = max(ans, events[i][2] + max_value[leftmost])
         return ans
-                
+
+24-dec-2025 
+
+ class Solution:
+    def minimumBoxes(self, apple: List[int], capacity: List[int]) -> int:
+        total = sum(apple)
+        capacity.sort(reverse = True)
+
+        for i, c in enumerate(capacity):
+            total -= c 
+
+            if(total <= 0):
+                return i + 1               
         
         
         
