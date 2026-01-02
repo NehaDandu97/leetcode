@@ -6029,7 +6029,16 @@ class Solution:
                 return digits
 
         return [1] + [0] * n
-    
+
+
+class Solution:
+    def repeatedNTimes(self, nums: List[int]) -> int:
+        d = dict(Counter(nums))
+
+        for key in d:
+            
+            if d[key] == len(nums)/2:
+                return key
         
         
         
