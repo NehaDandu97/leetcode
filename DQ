@@ -6328,6 +6328,31 @@ class Solution:
             acc += h * w
 
         return 0.0
+
+
+class Solution:
+    def maximizeSquareHoleArea(
+        self, n: int, m: int, hBars: List[int], vBars: List[int]
+    ) -> int:
+
+        def _longest_cons_seq(seq):
+            ans = 1
+            sans = 1
+            seq.sort()
+            for i in range(len(seq) - 1):
+                if seq[i] + 1 == seq[i + 1]:
+                    sans += 1
+                else:
+                    ans = max(ans, sans)
+                    sans = 1
+            return max(ans, sans)
+
+        vmax = _longest_cons_seq(vBars)
+        hmax = _longest_cons_seq(hBars)
+
+        ans = min(hmax, vmax)
+
+        return (ans + 1) ** 2
         
         
                
