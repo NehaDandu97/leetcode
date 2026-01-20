@@ -6453,7 +6453,18 @@ class Solution:
                     if  prfk[j+k] -prfk[j-1] -prf1[j+k] +prf1[j-1] <= t: return sqr(k+1, hi)
             return  sqr(lo, k)
         return  sqr(0, min(n,m))        
-        
+
+
+
+     class Solution:
+    def minBitwiseArray(self, nums: List[int]) -> List[int]:
+        ans = []
+        for n in nums:
+            if n != 2:
+                ans.append(n - ((n + 1) & (-n - 1)) // 2)
+            else:
+                ans.append(-1)
+        return ans   
        
         
                
