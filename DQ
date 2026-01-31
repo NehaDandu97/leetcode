@@ -6685,6 +6685,21 @@ class Solution:
                 if s in graph:
                     dp[end] = min(dp[end], dp[start] + calc_cost(s, target[start:end]))
         return -1 if dp[-1] == inf else dp[-1]
+
+744. Find Smallest Letter Greater Than Target
+class Solution:
+    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+        res = letters[0]
+        f= False
+        for ch in letters:
+            if not f:
+                if ch > target:
+                    res = ch
+                    f = not f
+            else:
+                if ch > target and ch < res:
+                    res = ch
+        return res
         
         
                
