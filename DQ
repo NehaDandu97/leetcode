@@ -6700,6 +6700,11 @@ class Solution:
                 if ch > target and ch < res:
                     res = ch
         return res
+
+3010. Divide an Array Into Subarrays With Minimum Cost I
+class Solution:
+    def minimumCost(self, nums: List[int]) -> int:
+        return nums[0]+sum(heapq.nsmallest(2, nums[1:]))
         
         
                
