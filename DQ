@@ -1,4 +1,4 @@
-y⁶53151. Special Array I
+53151. Special Array I
 class Solution:
     def isArraySpecial(self, nums: List[int]) -> bool:
         for i in range(len(nums)-1):
