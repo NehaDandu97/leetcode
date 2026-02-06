@@ -6817,6 +6817,7 @@ class Solution:
         n = len(nums)
         return [nums[(i + x) % n] for i, x in enumerate(nums)]
 
+
 class Solution:
     def minRemoval(self, nums: List[int], k: int) -> int:
         nums.sort()
