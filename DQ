@@ -6885,8 +6885,6 @@ class Solution:
         self.inorder(root, vals)
         return self.build(vals, 0, len(vals) - 1)
 
-
-
 class Solution:
     def longestBalanced(self, nums: list[int]) -> int:
         n = len(nums)
