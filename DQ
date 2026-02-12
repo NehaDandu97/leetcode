@@ -7009,6 +7009,29 @@ class Solution:
                 maxlen = idx - i + 1
         
         return maxlen   
+
+class Solution:
+    def longestBalanced(self, s: str) -> int:
+        a = 0
+        n = len(s)
+        for i in range(n):
+            freq = [0] * 26
+            for j in range(i, n):
+                freq[ord(s[j]) - ord('a')] += 1
+                
+                val = 0
+                balanced = True
+                for count in freq:
+                    if count != 0:
+                        if val == 0:
+                            val = count
+                        elif val != count:
+                            balanced = False
+                            break
+                if balanced:
+                    a = max(a, j - i + 1)
+        return a
+        
         
         
 
