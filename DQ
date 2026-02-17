@@ -1,4 +1,16 @@
-53151. Special Array I
+class Solution:
+    def readBinaryWatch(self, turnedOn: int) -> list[str]:
+
+        if turnedOn > 8: return []
+        ans = []
+        
+        for hour in range(12):
+            for minute in range(60):
+                if hour.bit_count() + minute.bit_count() == turnedOn:
+                    ans.append(f"{hour}:{minute:02d}")
+
+        return ans
+        53151. Special Array I
 class Solution:
     def isArraySpecial(self, nums: List[int]) -> bool:
         for i in range(len(nums)-1):
@@ -7102,7 +7114,21 @@ class Solution:
             ans+=1<<(32-(n&-n).bit_length())
             n&=(n-1)
         return ans
+
+
+class Solution:
+    def readBinaryWatch(self, turnedOn: int) -> list[str]:
+
+        if turnedOn > 8: return []
+        ans = []
         
+        for hour in range(12):
+            for minute in range(60):
+                if hour.bit_count() + minute.bit_count() == turnedOn:
+                    ans.append(f"{hour}:{minute:02d}")
+
+        return ans
+                
     
         
 
