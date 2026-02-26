@@ -7214,6 +7214,18 @@ class Solution:
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
         return sorted(arr, key= lambda a: (a.bit_count(), a))
+
+class Solution:
+    def numSteps(self, s: str) -> int:
+
+        n, x = int(s,2), 0
+        
+        while n != 1: 
+            if n&1: n+= 1 
+            else:   n>>= 1    
+            x+= 1
+        
+        return x
                 
         
         
