@@ -7254,6 +7254,10 @@ class Solution:
             result = ((result << i.bit_length()) + i) % MOD
 
         return result
+
+class Solution:
+    def minPartitions(self, n: str) -> int:
+        return int(max(n))
                 
         
         
