@@ -7330,8 +7330,12 @@ class Solution:
                 c += 1
             j ^= 1
         return min(c, n - c)
-                
-        
+
+
+      
+ class Solution:
+    def checkOnesSegment(self, s: str) -> bool:
+        return "01" not in s
         
         
 
