@@ -1,4 +1,4 @@
-class Solution:
+⁹class Solution:
     def readBinaryWatch(self, turnedOn: int) -> list[str]:
 
         if turnedOn > 8: return []
@@ -8164,6 +8164,12 @@ class Solution:
 
         return "".join(res).rstrip()
 
+class Solution:
+    def judgeCircle(self, moves: str) -> bool:
+        count = Counter(moves)
+        if (count['L'] == count['R']) and (count['U'] == count['D']):
+            return True
+        return False
 
 
         
