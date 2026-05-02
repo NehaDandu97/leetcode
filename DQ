@@ -8778,7 +8778,16 @@ class Solution:
             F+=Sum-n*nums[n-k]
             ans=max(ans, F)
         return ans
-        
+
+
+   class Solution:
+    def rotatedDigits(self, n: int) -> int:
+        ans = 0
+        for i in range(n+1):
+            a = str(i)
+            if ('2' in a or '5' in a or '6' in a or '9' in a) and ('4' not in a) and ('7' not in a) and ('3' not in a):
+                ans += 1
+        return ans     
         
          
         
