@@ -8788,6 +8788,12 @@ class Solution:
             if ('2' in a or '5' in a or '6' in a or '9' in a) and ('4' not in a) and ('7' not in a) and ('3' not in a):
                 ans += 1
         return ans     
+
+class Solution:
+    def rotateString(self, s: str, goal: str) -> bool:
+        return len(s)==len(goal) and (s+s).find(goal)!=-1
+
+
         
          
         
