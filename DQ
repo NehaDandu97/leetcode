@@ -8998,7 +8998,14 @@ class Solution:
             return ans
         ans=dfs(len(nums)-1)
         return -1 if ans<0 else ans
-
+class Solution:
+    def separateDigits(self, nums: List[int]) -> List[int]:
+        output = []
+        for i in nums:
+            s = str(i)
+            for x in s:
+                output.append(int(x))
+        return output
         
         
 
