@@ -9375,7 +9375,71 @@ class Solution:
             ans = min(ans, total)
 
         return ans
+
+
+from sortedcontainers import SortedList
+
+class Solution:
+    def getResults(self, queries: List[List[int]]) -> List[bool]:
+        # 1. Find the maximum coordinate to size the Segment Tree
+        max_x = max(q[1] for q in queries) + 1
+        tree = [0] * (4 * max_x)
         
+        # Segment Tree Point Update
+        def update(node: int, start: int, end: int, idx: int, val: int):
+            if start == end:
+                tree[node] = val
+                return
+            mid = (start + end) // 2
+            if idx <= mid:
+                update(2 * node, start, mid, idx, val)
+            else:
+                update(2 * node + 1, mid + 1, end, idx, val)
+            tree[node] = max(tree[2 * node], tree[2 * node + 1])
+            
+        # Segment Tree Range Max Query
+        def query_tree(node: int, start: int, end: int, l: int, r: int) -> int:
+            if r < start or l > end or l > r:
+                return 0
+            if l <= start and end <= r:
+                return tree[node]
+            mid = (start + end) // 2
+            return max(query_tree(2 * node, start, mid, l, r),
+                       query_tree(2 * node + 1, mid + 1, end, l, r))
+                       
+        # Initialize boundaries
+        obstacles = SortedList([0, max_x])
+        update(1, 0, max_x, max_x, max_x) # The initial gap from 0 to max_x
+        
+        ans = []
+        for q in queries:
+            x = q[1]
+            if q[0] == 1:
+                # Find neighbors
+                idx = obstacles.bisect_right(x)
+                right = obstacles[idx]
+                left = obstacles[idx - 1]
+                
+                obstacles.add(x)
+                
+                # Split the gap
+                update(1, 0, max_x, x, x - left)
+                update(1, 0, max_x, right, right - x)
+            else:
+                sz = q[2]
+                # Find the last obstacle before or exactly at x
+                idx = obstacles.bisect_right(x) - 1
+                left = obstacles[idx]
+                
+                # Max gap completely to the left of the last obstacle
+                max_gap = query_tree(1, 0, max_x, 0, left)
+                
+                # The trailing gap from the last obstacle to the boundary x
+                current_gap = x - left
+                
+                ans.append(max(max_gap, current_gap) >= sz)
+                
+        return ans
         
         
         
