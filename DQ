@@ -9617,6 +9617,11 @@ class Solution:
             else:
                 m+=1
         return nums[:l]+[pivot]*m+R
+
+
+class Solution:
+    def maxTotalValue(self, nums: List[int], k: int) -> int:
+        return (max(nums)-min(nums))*k
         
         
         
