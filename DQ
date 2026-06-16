@@ -9834,6 +9834,17 @@ class Solution:
         prev_node.next = node_to_remove.next
             
         return head
+
+class Solution:
+    def processStr(self, s: str) -> str:
+        res = []
+        for c in s:
+            if c=='*': res and res.pop()
+            elif c=='#': res += res
+            elif c=='%': res.reverse()
+            else: res.append(c)
+        
+        return ''.join(res)
         
         
 
