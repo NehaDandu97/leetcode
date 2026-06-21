@@ -9907,6 +9907,16 @@ class Solution:
         for rsa,rsb in pairwise(rs): rsb[1] = min(rsb[1], rsa[1] + rsb[0]-rsa[0])
         for i in range(len(rs)-2,-1,-1): rs[i][1] = min(rs[i][1], rs[i+1][1] + rs[i+1][0]-rs[i][0])
         return   min(1000000000, max(ha + (hb-ha + ib-ia)//2  for [ia,ha],[ib,hb] in pairwise(rs)))
+
+
+class Solution:
+    def maxIceCream(self, costs: List[int], coins: int) -> int:
+        cn=0
+        for i in sorted(costs):
+            if i<=coins:
+                cn+=1
+                coins-=i
+        return cn
         
 
                 
