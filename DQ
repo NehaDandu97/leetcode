@@ -9908,7 +9908,6 @@ class Solution:
         for i in range(len(rs)-2,-1,-1): rs[i][1] = min(rs[i][1], rs[i+1][1] + rs[i+1][0]-rs[i][0])
         return   min(1000000000, max(ha + (hb-ha + ib-ia)//2  for [ia,ha],[ib,hb] in pairwise(rs)))
 
-
 class Solution:
     def maxIceCream(self, costs: List[int], coins: int) -> int:
         cn=0
@@ -9917,7 +9916,10 @@ class Solution:
                 cn+=1
                 coins-=i
         return cn
-        
+
+class Solution:
+    def maxNumberOfBalloons(self, text: str) -> int:
+        return min((f:=Counter(text))['a'], f['b'], f['l']//2, f['o']//2, f['n'] )
 
                 
 
