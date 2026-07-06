@@ -10243,7 +10243,9 @@ class Solution:
 
         max_sum, paths = dfsUtil(0, 0)
         return [max_sum % ((10 ** 9) + 7), paths % ((10 ** 9) + 7)] if max_sum != float(-inf) else (0, 0)
-
+class Solution:
+    def removeCoveredIntervals(self, a: List[List[int]]) -> int:
+        return sum(sum(ll<=l<r<=rr for ll,rr in a)==1 for l,r in a)
 
         
         
