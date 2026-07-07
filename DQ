@@ -10247,6 +10247,11 @@ class Solution:
     def removeCoveredIntervals(self, a: List[List[int]]) -> int:
         return sum(sum(ll<=l<r<=rr for ll,rr in a)==1 for l,r in a)
 
+class Solution:
+    def sumAndMultiply(self, n: int) -> int:
+        digits = [int(c) for c in str(n) if c != '0']
+        x = int(''.join(map(str, digits))) if digits else 0
+        return x * sum(digits)
         
         
 
