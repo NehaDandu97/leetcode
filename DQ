@@ -10414,6 +10414,30 @@ class Solution:
             arr[index] = value_to_rank[arr[index]]
         
         return arr  # Return the updated array
+
+
+class Solution:
+    def sequentialDigits(self, low: int, high: int) -> List[int]:
+        ans=[]
+        num='123456789'
+        ld,hd=len(str(low)),len(str(high))
+        for j in range(0,hd-ld+1):
+            lowd=ld
+            n,m=0,lowd
+            while m<len(num)+1:
+                slice1=num[n:m]
+                if low<=int(slice1)<=high:
+                    ans.append(int(slice1))
+                if int(slice1)>high:
+                    lowd+=1
+                    break
+                n+=1
+                m+=1
+            ld+=1
+        return ans
+
+
+
         
         
 
