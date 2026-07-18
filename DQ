@@ -1,4 +1,4 @@
-8⁹class Solution:
+58⁹class Solution:
     def readBinaryWatch(self, turnedOn: int) -> list[str]:
 
         if turnedOn > 8: return []
@@ -10519,7 +10519,10 @@ class Solution:
         for q in queries:
             ans.append(bisect_right(prefix, q))
         return ans
-        
+
+class Solution:
+    def findGCD(self, nums: List[int]) -> int:
+                return gcd(min(nums),max(nums))
         
 
           
