@@ -6948,7 +6948,10 @@ class segmentTree:
             return
         mid = (left + right) >> 1
         self.build(nums, left, mid, 2 * id + 1)
-        self.build(nums, mid + 1, right, 2 * id + 2)
+        self.build(nums, mid + 1, right, 2 * id + 1
+
+
+
         self.pull(id)
 
     def query(self, l: int, r: int, val: int, left: int, right: int, id: int) -> int:
