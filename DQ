@@ -10608,6 +10608,10 @@ class Solution:
     def maxActiveSectionsAfterTrade(self, s: str) -> int:
         return s.count('1')+max(map(sum,pairwise(map(len,findall(r'0+',s)))),default=0)
 
+class Solution:
+    def uniqueXorTriplets(self, nums: List[int]) -> int:
+        return n if (n:=len(nums))<3 else 1<<n.bit_length()
+
           
         
        
