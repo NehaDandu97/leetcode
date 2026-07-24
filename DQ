@@ -3685,7 +3685,6 @@ class Solution:
             return (include + skip) % MOD
 
         return dp(n, 1)
-
 326. Power of Three
 class Solution:
     def isPowerOfThree(self, n: int) -> bool:
