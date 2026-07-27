@@ -10635,7 +10635,6 @@ class Solution:
 
         return int(n_str[-1])*int(n_str[-2])
 
-
 class Solution:
     def maximumProduct(self, nums: List[int]) -> int:
         # We need the 3 largest numbers
@@ -10651,6 +10650,13 @@ class Solution:
             max_three[0] * max_three[1] * max_three[2],
             min_two[0] * min_two[1] * max_three[0]
         )
+
+
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        nums.sort(reverse= True)
+        a= (nums[0]-1)*(nums[1]-1)
+        return a
         
 
         
