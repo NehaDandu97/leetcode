@@ -8668,7 +8668,6 @@ class Solution:
                     stack.append((ni, nj))
         return False
 
-
 class Solution(object):
     def minOperations(self, grid, x):
         arr = []
