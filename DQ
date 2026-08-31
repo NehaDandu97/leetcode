@@ -11486,7 +11486,6 @@ class Solution:
         
         left, right = min(minp, maxp), max(minp, maxp)
 
-
 class Solution:
     def nodesBetweenCriticalPoints(self, head: Optional[ListNode]) -> List[int]:
         if not head or not head.next or not head.next.next:
