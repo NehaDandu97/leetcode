@@ -11566,6 +11566,10 @@ class Solution:
                     queue.appendleft((r, c, nxtFuel, nxtMask, moves))
 
         return -1
+
+
+class Solution:
+    def uniformArray(self, nums1: list[int]) -> bool: return True
         
         
         
