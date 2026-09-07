@@ -1,4 +1,4 @@
-858⁹class Solution:
+⁸858⁹class Solution:
     def readBinaryWatch(self, turnedOn: int) -> list[str]:
 
         if turnedOn > 8: return []
@@ -11641,6 +11641,16 @@ class Solution:
                     dp[i][j] = dp[i - 1][j]
 
         return int(dp[n][m])
+
+
+class Solution:
+    def distinctSubseqII(self, s: str) -> int:
+        mod = 10 ** 9 + 7
+        dp = [0]*26 # dp[i] stores the counts of subsequences starting with letter i
+        alphabetIndices = [ord(s[idx])-97 for idx in range(len(s)-1, -1, -1)]
+        for char in alphabetIndices:
+            dp[char] = (1 + sum(dp)) % mod
+        return sum(dp) % mod
         
         
 
