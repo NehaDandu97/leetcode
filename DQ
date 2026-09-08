@@ -11651,6 +11651,10 @@ class Solution:
         for char in alphabetIndices:
             dp[char] = (1 + sum(dp)) % mod
         return sum(dp) % mod
+
+class Solution:
+    def countCommas(self, n):
+        return max(0, n - 999)
         
         
 
