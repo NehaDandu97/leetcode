@@ -11867,6 +11867,10 @@ class Solution:
 
         dist = (nearestX - xCenter) ** 2 + (nearestY - yCenter) ** 2
         return dist <= radius * radius
+
+class Solution:
+    def reverseDegree(self, s: str) -> int:
+        return sum((i+1)*(ord('z')-ord(c)+1) for i, c in enumerate(s))
         
 
 
