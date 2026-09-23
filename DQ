@@ -11974,7 +11974,6 @@ class Solution:
             res.append(cnt_seg[x])
         return res
 
-
 class Solution:
     def minOperations(self, nums: List[int], x: int) -> int:
         target, n = sum(nums) - x, len(nums)
