@@ -12345,6 +12345,15 @@ class Solution:
     def maxAlternatingSum(self, nums: List[int]) -> int:
         A = sorted(a * a for a in nums)
         return sum(A) - sum(A[:len(A) // 2]) * 2
+
+
+class Solution:
+    def maxSumOfSquares(self, n: int, s: int) -> str:
+        if s > n * 9: return ''
+        q, r = divmod(s, 9)
+        res = '9' * q + (str(r) if r else '')
+        return res + '0' * (n - len(res))
+        
         
 
             
