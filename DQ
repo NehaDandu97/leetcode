@@ -12458,6 +12458,7 @@ class Solution:
         
         return (f(nums) - 1) % (10**9 + 7)
 
+
 class Solution:
     def targetIndices(self, nums: List[int], target: int) -> List[int]:
         nums.sort()
