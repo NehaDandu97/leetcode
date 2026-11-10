@@ -12994,6 +12994,7 @@ class Solution:
         mx = max(freq)
         return [i for i, x in enumerate(freq) if x == mx]
 
+
 class Solution:
     def climbStairs(self, n: int, costs: List[int]) -> int:
         a = b = c = 0
