@@ -13193,11 +13193,14 @@ class Solution:
         graph, ancestor = defaultdict(list), defaultdict(int)
         
         for node, par in enumerate(parent):
-            graph[par].append(node)
-        
+            graph[par].append(node)   
         dfs(0)
-
         return ans
+
+class Solution:
+    def checkString(self, s: str) -> bool:
+        s1 = "".join(sorted(s))
+        return s1 == s
         
 
 
